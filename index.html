@@ -34,18 +34,15 @@ a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
 ::selection { background: rgba(124,58,237,0.25); color: var(--brand-900); }
-
 /* ===== Scrollbar ===== */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--ink-100); }
 ::-webkit-scrollbar-thumb { background: var(--brand-300); border-radius: 999px; border: 2px solid var(--ink-100); }
 ::-webkit-scrollbar-thumb:hover { background: var(--brand-400); }
-
 /* ===== Layout ===== */
 .container { max-width: 80rem; margin: 0 auto; padding-left: 1.25rem; padding-right: 1.25rem; }
 @media(min-width:640px){ .container { padding-left: 2rem; padding-right: 2rem; } }
 @media(min-width:1024px){ .container { padding-left: 2.5rem; padding-right: 2.5rem; } }
-
 /* ===== Reusable bits ===== */
 .eyebrow {
   display: inline-flex; align-items: center; gap: 0.5rem;
@@ -60,6 +57,7 @@ img { max-width: 100%; display: block; }
 .btn-primary { background: var(--brand-600); color: #fff; }
 .btn-primary:hover { background: var(--brand-500); box-shadow: 0 0 40px -8px rgba(124,58,237,0.5); }
 .btn-primary:active { transform: scale(0.98); }
+.btn-primary:disabled { opacity: 0.7; cursor: not-allowed; }
 .btn-ghost { background: transparent; border: 1px solid var(--ink-300); color: var(--ink-800); }
 .btn-ghost:hover { border-color: var(--brand-400); background: var(--brand-50); }
 .card {
@@ -79,7 +77,6 @@ img { max-width: 100%; display: block; }
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .text-balance { text-wrap: balance; }
-
 /* ===== Animations ===== */
 @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -90,11 +87,9 @@ img { max-width: 100%; display: block; }
 .anim-fade-in { animation: fadeIn 0.6s ease-out both; }
 .anim-scale-in { animation: scaleIn 0.5s ease-out both; }
 .spin { animation: spin 0.6s linear infinite; }
-
 /* ===== Reveal on scroll ===== */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
 .reveal.shown { opacity: 1; transform: translateY(0); }
-
 /* ===== Navbar ===== */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;
@@ -126,7 +121,6 @@ img { max-width: 100%; display: block; }
 .mobile-menu ul { display: flex; flex-direction: column; gap: 0.25rem; padding: 1rem 0; }
 .mobile-menu a { display: block; border-radius: 0.75rem; padding: 0.75rem 1rem; font-size: 1rem; font-weight: 500; color: var(--ink-700); }
 .mobile-menu a:hover { background: var(--brand-50); color: var(--brand-700); }
-
 /* ===== Hero ===== */
 .hero { position: relative; overflow: hidden; padding-top: 7rem; }
 @media(min-width:640px){ .hero { padding-top: 9rem; } }
@@ -163,7 +157,6 @@ img { max-width: 100%; display: block; }
 .rating-text { font-size: 0.875rem; color: var(--ink-600); }
 .rating-text strong { color: var(--ink-900); }
 .rating-text .muted { color: var(--ink-400); }
-
 /* Browser mockup */
 .mockup-wrap { position: relative; max-width: 64rem; margin: 4rem auto 0; }
 .mockup-glow { position: absolute; left: -2rem; right: -2rem; top: -1.5rem; bottom: 0; z-index: -1; border-radius: 2rem; background: linear-gradient(to bottom, rgba(196,181,253,0.3), transparent); filter: blur(80px); }
@@ -185,14 +178,12 @@ img { max-width: 100%; display: block; }
 .mockup-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
 .mockup-visual .big { grid-column: 1/-1; height: 7rem; border-radius: 0.75rem; background: linear-gradient(135deg, var(--brand-200), var(--ink-100), var(--ink-50)); border: 1px solid var(--ink-200); }
 .mockup-visual .sm { height: 5rem; border-radius: 0.75rem; background: var(--ink-100); border: 1px solid var(--ink-200); }
-
 /* Logo marquee */
 .marquee-label { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--ink-400); margin-top: 5rem; }
 .marquee { margin-top: 1.5rem; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); }
 .marquee-track { display: flex; width: max-content; animation: marquee 40s linear infinite; gap: 3rem; padding-right: 3rem; }
 .marquee-track span { font-family: 'Clash Display', sans-serif; font-size: 1.25rem; font-weight: 600; color: var(--ink-400); transition: color 0.2s; }
 .marquee-track span:hover { color: var(--ink-700); }
-
 /* ===== Stats ===== */
 .stats { border-top: 1px solid var(--ink-200); border-bottom: 1px solid var(--ink-200); background: rgba(244,243,252,0.6); }
 .stats-inner { padding: 3.5rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -202,7 +193,6 @@ img { max-width: 100%; display: block; }
 .stat .val { font-family: 'Clash Display', sans-serif; font-size: 2.25rem; font-weight: 600; color: var(--ink-900); }
 @media(min-width:640px){ .stat .val { font-size: 3rem; } }
 .stat .lbl { margin-top: 0.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--ink-500); }
-
 /* ===== Section heading ===== */
 .section { padding: 6rem 0; }
 @media(min-width:640px){ .section { padding: 8rem 0; } }
@@ -211,7 +201,6 @@ img { max-width: 100%; display: block; }
 @media(min-width:640px){ .section-head h2 { font-size: 2.25rem; } }
 @media(min-width:1024px){ .section-head h2 { font-size: 3rem; } }
 .section-head p { margin-top: 1rem; font-size: 1rem; line-height: 1.625; color: var(--ink-600); }
-
 /* ===== Services ===== */
 .services-grid { margin-top: 3.5rem; display: grid; gap: 1rem; }
 @media(min-width:640px){ .services-grid { grid-template-columns: 1fr 1fr; } }
@@ -225,7 +214,6 @@ img { max-width: 100%; display: block; }
 .service-card p { margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.625; color: var(--ink-500); }
 .service-tags { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .service-tags li { border-radius: 9999px; border: 1px solid var(--ink-200); background: var(--ink-100); padding: 0.25rem 0.625rem; font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; color: var(--ink-500); }
-
 /* ===== Process ===== */
 .process-bg { position: absolute; left: 50%; top: 50%; z-index: -1; width: 600px; height: 400px; transform: translate(-50%,-50%); background: var(--brand-200); border-radius: 9999px; filter: blur(120px); opacity: 0.3; }
 .process-desktop { margin-top: 4rem; display: none; gap: 2.5rem; grid-template-columns: 0.9fr 1.1fr; }
@@ -257,7 +245,6 @@ img { max-width: 100%; display: block; }
 .process-deliv ul { margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
 .process-deliv li { display: flex; align-items: center; gap: 0.625rem; font-size: 0.875rem; color: var(--ink-700); }
 .process-deliv svg { width: 1rem; height: 1rem; color: var(--brand-600); stroke-width: 2.5; flex-shrink: 0; }
-
 /* Process mobile */
 .process-mobile { margin-top: 3rem; display: flex; flex-direction: column; gap: 1rem; }
 @media(min-width:1024px){ .process-mobile { display: none; } }
@@ -271,7 +258,6 @@ img { max-width: 100%; display: block; }
 .process-mobile-tags { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .process-mobile-tags li { display: flex; align-items: center; gap: 0.375rem; border-radius: 9999px; border: 1px solid var(--ink-200); background: var(--ink-100); padding: 0.25rem 0.625rem; font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; color: var(--ink-500); }
 .process-mobile-tags svg { width: 0.75rem; height: 0.75rem; color: var(--brand-600); stroke-width: 2.5; }
-
 /* ===== Work ===== */
 .work-top { display: flex; flex-direction: column; gap: 1.5rem; }
 @media(min-width:640px){ .work-top { flex-direction: row; align-items: flex-end; justify-content: space-between; } }
@@ -301,16 +287,9 @@ img { max-width: 100%; display: block; }
 .work-item:hover .work-arrow { opacity: 1; }
 .work-arrow svg { width: 1rem; height: 1rem; }
 .work-result { margin-top: 0.25rem; font-size: 0.875rem; color: rgba(255,255,255,0.85); }
-
 /* ===== Pricing ===== */
 .pricing-bg { position: absolute; left: 50%; top: 33%; z-index: -1; width: 700px; height: 420px; transform: translateX(-50%); background: var(--brand-200); border-radius: 9999px; filter: blur(130px); opacity: 0.25; }
 .pricing-center { max-width: 42rem; margin: 0 auto; text-align: center; }
-.toggle { margin-top: 2rem; display: inline-flex; align-items: center; gap: 0.25rem; border-radius: 9999px; border: 1px solid var(--ink-200); background: #fff; padding: 0.25rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-.toggle button { border-radius: 9999px; padding: 0.375rem 1rem; font-size: 0.875rem; font-weight: 500; border: none; cursor: pointer; background: transparent; color: var(--ink-500); transition: all 0.2s; font-family: inherit; }
-.toggle button.on { background: var(--ink-900); color: #fff; }
-.toggle button:hover:not(.on) { color: var(--ink-800); }
-.toggle .save { display: inline-flex; align-items: center; gap: 0.375rem; }
-.toggle .save span { border-radius: 9999px; background: var(--accent-100); padding: 0.125rem 0.375rem; font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; color: var(--accent-700); }
 .pricing-grid { margin-top: 3.5rem; display: grid; gap: 1.25rem; }
 @media(min-width:1024px){ .pricing-grid { grid-template-columns: 1fr 1fr 1fr; } }
 .plan { position: relative; display: flex; flex-direction: column; border-radius: 1rem; border: 1px solid var(--ink-200); background: #fff; padding: 1.75rem; transition: all 0.3s; }
@@ -320,9 +299,15 @@ img { max-width: 100%; display: block; }
 .plan-badge { position: absolute; top: -0.75rem; left: 50%; transform: translateX(-50%); border-radius: 9999px; background: var(--brand-600); padding: 0.25rem 0.75rem; font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #fff; }
 .plan h3 { font-size: 1.25rem; font-weight: 600; color: var(--ink-900); }
 .plan .tagline { margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.625; color: var(--ink-500); }
-.plan-price { margin-top: 1.5rem; display: flex; align-items: flex-end; gap: 0.25rem; }
-.plan-price .amt { font-family: 'Clash Display', sans-serif; font-size: 2.25rem; font-weight: 600; color: var(--ink-900); }
+.plan-price { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.plan-price-row { display: flex; align-items: flex-end; gap: 0.25rem; }
+.plan-price-label { font-family: 'JetBrains Mono', monospace; font-size: 0.625rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-400); margin-bottom: 0.375rem; }
+.plan-price .amt { font-family: 'Clash Display', sans-serif; font-size: 2.5rem; font-weight: 600; color: var(--ink-900); line-height: 1; }
 .plan-price .per { margin-bottom: 0.25rem; font-size: 0.875rem; color: var(--ink-500); }
+.plan-upkeep { display: flex; align-items: flex-end; gap: 0.25rem; padding-top: 0.75rem; border-top: 1px dashed var(--ink-200); }
+.plan-upkeep .amt { font-family: 'Clash Display', sans-serif; font-size: 1.25rem; font-weight: 600; color: var(--brand-600); line-height: 1; }
+.plan-upkeep .per { margin-bottom: 0.125rem; font-size: 0.75rem; color: var(--ink-500); }
+.plan-upkeep-label { font-family: 'JetBrains Mono', monospace; font-size: 0.625rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-400); margin-bottom: 0.25rem; }
 .plan-bill { margin-top: 0.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-400); }
 .plan-cta { margin-top: 1.5rem; }
 .plan-features { margin-top: 1.75rem; border-top: 1px solid var(--ink-200); padding-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
@@ -331,7 +316,6 @@ img { max-width: 100%; display: block; }
 .plan-features .check svg { width: 0.75rem; height: 0.75rem; stroke-width: 3; }
 .pricing-note { margin-top: 2.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.875rem; color: var(--ink-500); }
 .pricing-note svg { width: 1rem; height: 1rem; color: var(--brand-600); }
-
 /* ===== Testimonials ===== */
 .testimonials { border-top: 1px solid var(--ink-200); border-bottom: 1px solid var(--ink-200); background: rgba(244,243,252,0.6); }
 .tst-rating { margin-top: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
@@ -349,7 +333,6 @@ img { max-width: 100%; display: block; }
 .tst-avatar { width: 2.5rem; height: 2.5rem; border-radius: 9999px; display: grid; place-items: center; color: #fff; font-size: 0.875rem; font-weight: 600; }
 .tst-name { font-size: 0.875rem; font-weight: 600; color: var(--ink-900); }
 .tst-role { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-400); }
-
 /* ===== FAQ ===== */
 .faq-grid { display: grid; gap: 3rem; }
 @media(min-width:1024px){ .faq-grid { grid-template-columns: 0.8fr 1.2fr; } }
@@ -372,7 +355,6 @@ img { max-width: 100%; display: block; }
 .faq-item.open .faq-a-wrap { grid-template-rows: 1fr; opacity: 1; }
 .faq-a-inner { overflow: hidden; }
 .faq-a { padding: 0 1.25rem 1.25rem; font-size: 0.875rem; line-height: 1.625; color: var(--ink-500); }
-
 /* ===== CTA ===== */
 .cta { padding: 3rem 0; }
 @media(min-width:640px){ .cta { padding: 5rem 0; } }
@@ -392,7 +374,6 @@ img { max-width: 100%; display: block; }
 .cta-btn-white:hover svg { transform: translateX(2px); }
 .cta-btn-outline { display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.3); padding: 0.75rem 1.25rem; font-size: 0.875rem; font-weight: 600; color: #fff; transition: all 0.3s; }
 .cta-btn-outline:hover { background: rgba(255,255,255,0.1); }
-
 /* ===== Contact ===== */
 .contact { position: relative; overflow: hidden; }
 .contact-bg { position: absolute; left: 50%; top: 0; z-index: -1; width: 760px; height: 420px; transform: translateX(-50%); background: var(--brand-200); border-radius: 9999px; filter: blur(140px); opacity: 0.25; pointer-events: none; }
@@ -431,7 +412,6 @@ select.input { cursor: pointer; }
 .form-success-icon svg { width: 1.75rem; height: 1.75rem; }
 .form-success h3 { margin-top: 1.25rem; font-size: 1.5rem; font-weight: 600; color: var(--ink-900); }
 .form-success p { margin-top: 0.5rem; max-width: 24rem; font-size: 0.875rem; line-height: 1.625; color: var(--ink-600); }
-
 /* ===== Footer ===== */
 .footer { border-top: 1px solid var(--ink-200); background: var(--ink-100); }
 .footer-inner { padding: 4rem 0; display: grid; gap: 3rem; }
@@ -448,13 +428,11 @@ select.input { cursor: pointer; }
 @media(min-width:640px){ .footer-bottom { flex-direction: row; align-items: center; justify-content: space-between; } }
 .footer-bottom-links { display: flex; gap: 1.5rem; }
 .footer-bottom-links a:hover { color: var(--ink-700); }
-
 /* ===== Utility ===== */
 .hidden { display: none !important; }
 </style>
 </head>
 <body>
-
 <!-- ===== Navbar ===== -->
 <header class="navbar" id="navbar">
   <div class="container navbar-inner">
@@ -463,7 +441,7 @@ select.input { cursor: pointer; }
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
         <span class="logo-dot"></span>
       </span>
-      <span class="logo-text">Cornerstone Studio</span>
+      <span class="logo-text">Cornerstone</span>
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
@@ -489,7 +467,6 @@ select.input { cursor: pointer; }
     </ul>
   </div>
 </header>
-
 <main>
 <!-- ===== Hero ===== -->
 <section id="top" class="hero">
@@ -532,7 +509,6 @@ select.input { cursor: pointer; }
         </div>
       </div>
     </div>
-
     <!-- Browser mockup -->
     <div class="mockup-wrap anim-scale-in" style="animation-delay:400ms;">
       <div class="mockup-glow"></div>
@@ -560,7 +536,6 @@ select.input { cursor: pointer; }
         </div>
       </div>
     </div>
-
     <p class="marquee-label">Trusted by teams at</p>
     <div class="marquee">
       <div class="marquee-track">
@@ -570,7 +545,6 @@ select.input { cursor: pointer; }
     </div>
   </div>
 </section>
-
 <!-- ===== Stats ===== -->
 <section class="stats">
   <div class="container">
@@ -582,7 +556,6 @@ select.input { cursor: pointer; }
     </div>
   </div>
 </section>
-
 <!-- ===== Services ===== -->
 <section id="services" class="section">
   <div class="container">
@@ -594,7 +567,6 @@ select.input { cursor: pointer; }
     <div class="services-grid" id="servicesGrid"></div>
   </div>
 </section>
-
 <!-- ===== Process ===== -->
 <section id="process" class="section" style="position:relative;">
   <div class="process-bg"></div>
@@ -614,7 +586,6 @@ select.input { cursor: pointer; }
     <div class="process-mobile" id="processMobile"></div>
   </div>
 </section>
-
 <!-- ===== Work ===== -->
 <section id="work" class="section">
   <div class="container">
@@ -630,7 +601,6 @@ select.input { cursor: pointer; }
     <div class="work-grid" id="workGrid"></div>
   </div>
 </section>
-
 <!-- ===== Pricing ===== -->
 <section id="pricing" class="section" style="position:relative;">
   <div class="pricing-bg"></div>
@@ -638,11 +608,7 @@ select.input { cursor: pointer; }
     <div class="pricing-center">
       <span class="eyebrow">Pricing</span>
       <h2 class="text-balance">Simple, transparent, no surprises</h2>
-      <p>Pick a plan that fits where you are today. Upgrade, pause, or cancel anytime — you're never locked in.</p>
-      <div class="toggle">
-        <button id="btnMonthly">Monthly</button>
-        <button id="btnAnnual" class="on"><span class="save">Annual <span>-18%</span></span></button>
-      </div>
+      <p>One-time project pricing with a simple monthly upkeep fee. No long-term contracts — pause or cancel anytime.</p>
     </div>
     <div class="pricing-grid" id="pricingGrid"></div>
     <p class="pricing-note">
@@ -651,7 +617,6 @@ select.input { cursor: pointer; }
     </p>
   </div>
 </section>
-
 <!-- ===== Testimonials ===== -->
 <section class="testimonials section">
   <div class="container">
@@ -672,7 +637,6 @@ select.input { cursor: pointer; }
     <div class="tst-grid" id="tstGrid"></div>
   </div>
 </section>
-
 <!-- ===== FAQ ===== -->
 <section id="faq" class="section">
   <div class="container">
@@ -687,7 +651,6 @@ select.input { cursor: pointer; }
     </div>
   </div>
 </section>
-
 <!-- ===== CTA ===== -->
 <section class="cta">
   <div class="container">
@@ -705,9 +668,8 @@ select.input { cursor: pointer; }
     </div>
   </div>
 </section>
-
 <!-- ===== Contact ===== -->
-<section id="contact" class="section" style="position:relative;overflow:hidden;">
+<section id="contact" class="section contact">
   <div class="contact-bg"></div>
   <div class="container">
     <div class="contact-grid">
@@ -740,7 +702,7 @@ select.input { cursor: pointer; }
         <div id="formSuccess" class="form-success hidden">
           <span class="form-success-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
           <h3>Message sent</h3>
-          <p>Thanks for reaching out — we'll get back to you within one business day. In the meantime, feel free to browse our work.</p>
+          <p>Thanks for reaching out — a confirmation email is on its way to your inbox, and we'll get back to you within one business day.</p>
           <button class="btn btn-ghost" id="sendAnother" style="margin-top:1.5rem;">Send another message</button>
         </div>
         <form id="contactForm" novalidate>
@@ -770,7 +732,7 @@ select.input { cursor: pointer; }
               <label class="label" for="f-budget">Budget range</label>
               <select class="input" id="f-budget" name="budget">
                 <option value="" disabled selected>Select a range</option>
-                <option>&lt; $5k</option><option>$5k – $15k</option><option>$15k – $50k</option><option>$50k+</option>
+                <option>&lt; $300</option><option>$400 – $1K</option><option>$1K – $2K</option><option>$2K+</option>
               </select>
             </div>
           </div>
@@ -794,7 +756,6 @@ select.input { cursor: pointer; }
   </div>
 </section>
 </main>
-
 <!-- ===== Footer ===== -->
 <footer class="footer">
   <div class="container">
@@ -849,10 +810,31 @@ select.input { cursor: pointer; }
 
 <!-- ===== Supabase JS ===== -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<!-- ===== EmailJS SDK (added) ===== -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 <script>
 (function(){
   "use strict";
 
+  /* =====================================================================
+     EMAILJS CONFIG  —  ⚠️ REPLACE THE 4 VALUES BELOW WITH YOUR OWN
+     Get them from https://dashboard.emailjs.com
+       1. PUBLIC_KEY        → Account → General → "Public Key"
+       2. SERVICE_ID        → Email Services → your connected service
+       3. TEMPLATE_ID_OWNER → the template that emails YOU the lead details
+       4. TEMPLATE_ID_CONFIRM → the auto-reply template sent to the applicant
+     ===================================================================== */
+  var EMAILJS_PUBLIC_KEY   = "FkudLB6frtSuvom0J";
+  var EMAILJS_SERVICE_ID   = "service_oop1v5v";
+  var TEMPLATE_ID_OWNER    = "template_uujhwab";
+  var TEMPLATE_ID_CONFIRM  = "template_rqks5ty";
+  var OWNER_EMAIL          = "cornerstonestudio.ca@gmail.com";
+
+  /* Initialise EmailJS */
+  if (window.emailjs) { emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); }
+
+  /* ===== Supabase (kept) ===== */
   var SUPABASE_URL = "https://ibqaewpliywcnvjyamuo.supabase.co";
   var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlicWFld3BsaXl3Y252anlhbXVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUzNDM0NjIsImV4cCI6MjEwMDkxOTQ2Mn0.GcYvqPmWO78Ult5IGoO_Rnkm3gcZY9OXq_eoBrh34P4";
   var supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { persistSession: false } });
@@ -944,7 +926,6 @@ select.input { cursor: pointer; }
   var activeStep = 0;
   var stepsEl = document.getElementById("processSteps");
   var detailEl = document.getElementById("processDetail");
-
   function renderDetail(){
     var s = steps[activeStep];
     detailEl.innerHTML = '<div class="process-detail-icon">'+icon(s.icon)+'</div>'
@@ -986,7 +967,7 @@ select.input { cursor: pointer; }
 
   /* ===== Work ===== */
   var projects = [
-    { name:"Northwind", category:"Fintech", result:"3.2x more leads", img:"https://images.pexels.com/photos/32299899/pexels-photo-32299899.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", grad:"linear-gradient(to top, rgba(76,29,149,0.5), rgba(28,26,40,0.2), rgba(15,14,24,0.7))", span:"span-2x2" },
+    { name:"Orée", category:"Fintech", result:"3.2x more leads", img:"https://images.pexels.com/photos/30979444/pexels-photo-30979444.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", grad:"linear-gradient(to top, rgba(76,29,149,0.5), rgba(28,26,40,0.2), rgba(15,14,24,0.7))", span:"span-2x2" },
     { name:"Sable & Co.", category:"Skincare", result:"+48% AOV", img:"https://images.pexels.com/photos/30979444/pexels-photo-30979444.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", grad:"linear-gradient(to top, rgba(124,41,12,0.5), rgba(28,26,40,0.2), rgba(15,14,24,0.7))", span:"" },
     { name:"Forma Studio", category:"Architecture", result:"Awwwards SOTD", img:"https://images.pexels.com/photos/34133564/pexels-photo-34133564.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", grad:"linear-gradient(to top, rgba(42,40,56,0.6), rgba(28,26,40,0.2), rgba(15,14,24,0.7))", span:"" },
     { name:"Quill Coffee", category:"DTC Brand", result:"Sold out in 9 days", img:"https://images.pexels.com/photos/4829083/pexels-photo-4829083.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", grad:"linear-gradient(to top, rgba(91,33,182,0.5), rgba(28,26,40,0.2), rgba(15,14,24,0.7))", span:"span-2" }
@@ -1009,22 +990,22 @@ select.input { cursor: pointer; }
 
   /* ===== Pricing ===== */
   var plans = [
-    { name:"Launchpad", tagline:"For startups that need to look established — fast.", monthly:2400, annual:2000, features:["5-page marketing site","Brand-aligned design system","CMS for blog & content","Mobile-first responsive build","Core SEO foundations","2 rounds of revisions","Launch in 2 weeks"], cta:"Start with Launchpad", featured:false },
-    { name:"Growth", tagline:"Our most popular plan for scaling companies.", monthly:4900, annual:4200, features:["Up to 12 pages","Custom brand identity","Advanced animations & interactions","Conversion-optimized layouts","A/B testing setup","Analytics & event tracking","3 rounds of revisions","Launch in 4 weeks"], cta:"Choose Growth", featured:true },
-    { name:"Enterprise", tagline:"For complex products that need a dedicated team.", monthly:null, annual:null, features:["Unlimited pages & scope","Dedicated design + dev team","Custom integrations & APIs","Headless CMS architecture","Performance & accessibility audit","Ongoing monthly iterations","Priority support","Custom timeline"], cta:"Talk to us", featured:false }
+    { name:"Launchpad", tagline:"For startups that need to look established — fast.", price:199, upkeep:25, features:["Up to 5 pages","Custom web design","Booking form","Google maps","Mobile responsive design","Contact form","2 rounds of revisions","Launch in 2 weeks","Basic SEO setup"], cta:"Start with Launchpad", featured:false },
+    { name:"Growth", tagline:"Our most popular plan for scaling companies.", price:399, upkeep:45, features:["Everything included in Launchpad","Up to 12 pages","Advanced animations & interactions","Integrated payments","Advanced SEO","Analytics & tracking","3 rounds of revisions","Launch in 4 weeks","Priority support"], cta:"Choose Growth", featured:true },
+    { name:"Enterprise", tagline:"For complex products that need a dedicated team.", price:null, upkeep:null, features:["Unlimited pages & scope","Dedicated design + dev team","Custom integrations & APIs","Headless CMS architecture","Performance & accessibility audit","Ongoing monthly iterations","Priority support","Custom timeline"], cta:"Talk to us", featured:false }
   ];
-  var isAnnual = true;
   var pg = document.getElementById("pricingGrid");
   function renderPricing(){
     pg.innerHTML = "";
     plans.forEach(function(p,i){
       var el = document.createElement("article");
       el.className = "plan" + (p.featured ? " featured" : "");
-      var price = p.monthly !== null ? (isAnnual ? p.annual : p.monthly) : null;
-      var priceHTML = price !== null
-        ? '<span class="amt">$'+price.toLocaleString()+'</span><span class="per">/mo</span>'
-        : '<span class="amt">Custom</span>';
-      var billNote = p.monthly !== null ? (isAnnual ? "Billed annually" : "Billed monthly") : "Tailored to scope";
+      var priceHTML = p.price !== null
+        ? '<span class="plan-price-label">One-time project fee</span><div class="plan-price-row"><span class="amt">$'+p.price.toLocaleString()+'</span></div>'
+          + '<div class="plan-upkeep"><span class="plan-upkeep-label">Monthly upkeep</span><div class="plan-price-row"><span class="amt">$'+p.upkeep.toLocaleString()+'</span><span class="per">/mo</span></div></div>'
+        : '<span class="plan-price-label">Custom pricing</span><div class="plan-price-row"><span class="amt">Custom</span></div>'
+          + '<div class="plan-upkeep"><span class="plan-upkeep-label">Monthly upkeep</span><div class="plan-price-row"><span class="amt">Custom</span></div></div>';
+      var billNote = p.price !== null ? "Plus monthly upkeep — cancel anytime" : "Tailored to scope";
       el.innerHTML = (p.featured ? '<span class="plan-badge">Most popular</span>' : '')
         + '<h3>'+p.name+'</h3><p class="tagline">'+p.tagline+'</p>'
         + '<div class="plan-price">'+priceHTML+'</div><p class="plan-bill">'+billNote+'</p>'
@@ -1034,18 +1015,6 @@ select.input { cursor: pointer; }
     });
   }
   renderPricing();
-  document.getElementById("btnMonthly").addEventListener("click", function(){
-    isAnnual = false;
-    this.classList.add("on");
-    document.getElementById("btnAnnual").classList.remove("on");
-    renderPricing();
-  });
-  document.getElementById("btnAnnual").addEventListener("click", function(){
-    isAnnual = true;
-    this.classList.add("on");
-    document.getElementById("btnMonthly").classList.remove("on");
-    renderPricing();
-  });
 
   /* ===== Testimonials ===== */
   var testimonials = [
@@ -1078,7 +1047,6 @@ select.input { cursor: pointer; }
     { q:"What happens after launch?", a:"You get 30 days of free post-launch support on every plan. After that, ongoing care and iteration are included in your monthly plan — we keep improving your site based on real data." },
     { q:"Do you offer SEO and analytics setup?", a:"Yes — every plan includes core technical SEO and analytics. Growth and Enterprise plans add event tracking, A/B testing infrastructure, and a documented growth plan." }
   ];
-  var openFAQ = 0;
   var fl = document.getElementById("faqList");
   faqs.forEach(function(f,i){
     var el = document.createElement("div");
@@ -1099,7 +1067,7 @@ select.input { cursor: pointer; }
     });
   });
 
-  /* ===== Contact form ===== */
+  /* ===== Contact form (Supabase + EmailJS) ===== */
   var form = document.getElementById("contactForm");
   var formSuccess = document.getElementById("formSuccess");
   var formError = document.getElementById("formError");
@@ -1114,43 +1082,80 @@ select.input { cursor: pointer; }
     submitLabel.innerHTML = '<svg class="spin" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem;"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>Sending…';
 
     var fd = new FormData(form);
-    var payload = {
-      name: (fd.get("name")||"").trim(),
-      email: (fd.get("email")||"").trim(),
-      company: (fd.get("company")||"").trim() || null,
-      budget: (fd.get("budget")||"") || null,
-      service: (fd.get("service")||"") || null,
-      message: (fd.get("message")||"").trim()
-    };
+    var name    = (fd.get("name")||"").trim();
+    var email   = (fd.get("email")||"").trim();
+    var company = (fd.get("company")||"").trim();
+    var service = (fd.get("service")||"").trim();
+    var budget  = (fd.get("budget")||"").trim();
+    var message = (fd.get("message")||"").trim();
 
-    if(!payload.name || !payload.email || !payload.message){
+    if(!name || !email || !message){
       showError("Please fill in your name, email, and a short message.");
       return;
     }
 
+    /* 1) Save to Supabase (kept as-is) */
     try {
+      var payload = {
+        name: name,
+        email: email,
+        company: company || null,
+        budget: budget || null,
+        service: service || null,
+        message: message
+      };
       var res = await supabase.from("contact_submissions").insert(payload);
       if(res.error) throw res.error;
-      form.reset();
-      form.classList.add("hidden");
-      formSuccess.classList.remove("hidden");
     } catch(err){
-      showError("Something went wrong sending your message. Please try again in a moment.");
+      showError("Something went wrong saving your message. Please try again in a moment.");
+      return;
     }
+
+    /* 2) Send emails via EmailJS — details to you + confirmation to applicant */
+    var params = {
+      name: name,
+      email: email,
+      company: company || "—",
+      service: service || "—",
+      budget: budget || "—",
+      message: message,
+      owner_email: OWNER_EMAIL,     // used as {{owner_email}} in the OWNER template's "To" field
+      reply_to: email,              // lets you reply straight to the applicant
+      submitted_at: new Date().toLocaleString()
+    };
+
+    try {
+      // a) Notify the studio owner with all details
+      await emailjs.send(EMAILJS_SERVICE_ID, TEMPLATE_ID_OWNER, params);
+      // b) Send a confirmation to the applicant
+      await emailjs.send(EMAILJS_SERVICE_ID, TEMPLATE_ID_CONFIRM, params);
+    } catch(err){
+      // Submission is safely stored in Supabase; only the email step failed.
+      showError("Your message was received, but the confirmation email couldn't be sent. We'll still get back to you shortly.");
+      return;
+    }
+
+    form.reset();
+    form.classList.add("hidden");
+    formSuccess.classList.remove("hidden");
+    resetSubmitButton();
   });
+
+  function resetSubmitButton(){
+    formSubmit.disabled = false;
+    submitLabel.innerHTML = 'Send message <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:0.5rem;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+  }
 
   function showError(msg){
     formErrorText.textContent = msg;
     formError.classList.remove("hidden");
-    formSubmit.disabled = false;
-    submitLabel.innerHTML = 'Send message <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:0.5rem;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+    resetSubmitButton();
   }
 
   document.getElementById("sendAnother").addEventListener("click", function(){
     formSuccess.classList.add("hidden");
     form.classList.remove("hidden");
   });
-
 })();
 </script>
 </body>
