@@ -258,35 +258,6 @@ img { max-width: 100%; display: block; }
 .process-mobile-tags { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .process-mobile-tags li { display: flex; align-items: center; gap: 0.375rem; border-radius: 9999px; border: 1px solid var(--ink-200); background: var(--ink-100); padding: 0.25rem 0.625rem; font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; color: var(--ink-500); }
 .process-mobile-tags svg { width: 0.75rem; height: 0.75rem; color: var(--brand-600); stroke-width: 2.5; }
-/* ===== Work ===== */
-.work-top { display: flex; flex-direction: column; gap: 1.5rem; }
-@media(min-width:640px){ .work-top { flex-direction: row; align-items: flex-end; justify-content: space-between; } }
-.work-link { display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; font-weight: 500; color: var(--brand-700); }
-.work-link:hover { color: var(--brand-800); }
-.work-link svg { width: 1rem; height: 1rem; transition: transform 0.2s; }
-.work-link:hover svg { transform: translate(2px,-2px); }
-.work-grid { margin-top: 3rem; display: grid; gap: 1rem; grid-auto-rows: 13.75rem; grid-template-columns: 1fr; }
-@media(min-width:640px){ .work-grid { grid-auto-rows: 16.25rem; } }
-@media(min-width:1024px){ .work-grid { grid-template-columns: repeat(4,1fr); } }
-.work-item { position: relative; overflow: hidden; border-radius: 1rem; border: 1px solid var(--ink-200); background: var(--ink-100); display: block; height: 100%; }
-.work-item.span-2 { grid-column: span 2; }
-@media(max-width:1023px){ .work-item.span-2 { grid-column: span 1; } }
-.work-item.span-2x2 { grid-column: span 2; grid-row: span 2; }
-@media(max-width:1023px){ .work-item.span-2x2 { grid-column: span 1; grid-row: span 1; } }
-.work-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.9; transition: all 0.7s; }
-.work-item:hover img { transform: scale(1.05); }
-.work-overlay { position: absolute; inset: 0; }
-.work-overlay-grad { position: absolute; inset: 0; }
-.work-content { position: relative; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; padding: 1.25rem; }
-@media(min-width:640px){ .work-content { padding: 1.5rem; } }
-.work-cat { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--brand-300); }
-.work-name-row { margin-top: 0.5rem; display: flex; align-items: flex-end; justify-content: space-between; gap: 0.75rem; }
-.work-name { font-family: 'Clash Display', sans-serif; font-size: 1.25rem; font-weight: 600; color: #fff; }
-@media(min-width:640px){ .work-name { font-size: 1.5rem; } }
-.work-arrow { display: flex; align-items: center; color: #fff; opacity: 0; transition: opacity 0.3s; }
-.work-item:hover .work-arrow { opacity: 1; }
-.work-arrow svg { width: 1rem; height: 1rem; }
-.work-result { margin-top: 0.25rem; font-size: 0.875rem; color: rgba(255,255,255,0.85); }
 /* ===== Pricing ===== */
 .pricing-bg { position: absolute; left: 50%; top: 33%; z-index: -1; width: 700px; height: 420px; transform: translateX(-50%); background: var(--brand-200); border-radius: 9999px; filter: blur(130px); opacity: 0.25; }
 .pricing-center { max-width: 42rem; margin: 0 auto; text-align: center; }
@@ -431,6 +402,9 @@ select.input { cursor: pointer; }
 /* ===== Utility ===== */
 .hidden { display: none !important; }
 </style>
+  <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
 </head>
 <body>
 <!-- ===== Navbar ===== -->
@@ -490,23 +464,8 @@ select.input { cursor: pointer; }
         </a>
         <a href="#work" class="btn btn-ghost">View our work</a>
       </div>
-      <div class="hero-rating anim-fade-up" style="animation-delay:340ms;">
-        <div class="avatars">
-          <span style="background:#8b5cf6"></span>
-          <span style="background:#f97316"></span>
-          <span style="background:#a8a6c4"></span>
-          <span style="background:#6d28d9"></span>
-        </div>
-        <div class="rating-text">
-          <span class="stars">
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </span>
-          <strong>4.9/5</strong> <span class="muted">from 120+ clients</span>
-        </div>
+      
+        
       </div>
     </div>
     <!-- Browser mockup -->
@@ -519,13 +478,13 @@ select.input { cursor: pointer; }
         </div>
         <div class="mockup-content">
           <div class="mockup-text">
-            <span class="eyebrow">Case study</span>
-            <h3>Northwind — 3.2x more leads in 60 days</h3>
+            <span class="eyebrow">Company Outline</span>
+            <h3>Cornerstone — Brand & Web Experience</h3>
             <p>A complete redesign and rebuild of a fintech platform's marketing site, shipping in 4 weeks with a conversion-first architecture.</p>
             <div class="mockup-stats">
-              <div><div class="num">3.2x</div><div class="lbl">Lead lift</div></div>
-              <div><div class="num">4wk</div><div class="lbl">To launch</div></div>
-              <div><div class="num">98</div><div class="lbl">Lighthouse</div></div>
+              <div><div class="num">01</div><div class="lbl">Made for you</div></div>
+              <div><div class="num">02</div><div class="lbl">Mobile Ready</div></div>
+              <div><div class="num">03</div><div class="lbl">Easy to edit</div></div>
             </div>
           </div>
           <div class="mockup-visual">
@@ -536,11 +495,11 @@ select.input { cursor: pointer; }
         </div>
       </div>
     </div>
-    <p class="marquee-label">Trusted by teams at</p>
+    <p class="marquee-label">Build with modern tools</p>
     <div class="marquee">
       <div class="marquee-track">
-        <span>Northwind</span><span>Lumen</span><span>Cobalt</span><span>Vertex</span><span>Halcyon</span><span>Monarch</span><span>Sable</span><span>Quill</span>
-        <span>Northwind</span><span>Lumen</span><span>Cobalt</span><span>Vertex</span><span>Halcyon</span><span>Monarch</span><span>Sable</span><span>Quill</span>
+        <span>Emergent</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vercel</span><span>Netlify</span><span>Github</span><span>React</span>
+        <span>Emergent</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vercel</span><span>Netlify</span><span>Github</span><span>React</span>
       </div>
     </div>
   </div>
@@ -549,9 +508,9 @@ select.input { cursor: pointer; }
 <section class="stats">
   <div class="container">
     <div class="stats-inner">
-      <div class="stat reveal"><div class="val">180+</div><div class="lbl">Projects shipped</div></div>
-      <div class="stat reveal" style="transition-delay:80ms;"><div class="val">4.9/5</div><div class="lbl">Average client rating</div></div>
-      <div class="stat reveal" style="transition-delay:160ms;"><div class="val">3.2x</div><div class="lbl">Avg. conversion lift</div></div>
+      <div class="stat reveal"><div class="val">100%</div><div class="lbl">Custom Designs</div></div>
+      <div class="stat reveal" style="transition-delay:80ms;"><div class="val">1:1</div><div class="lbl">Client Collaboration</div></div>
+      <div class="stat reveal" style="transition-delay:160ms;"><div class="val">24/7</div><div class="lbl">Live website</div></div>
       <div class="stat reveal" style="transition-delay:240ms;"><div class="val">4wk</div><div class="lbl">Typical time to launch</div></div>
     </div>
   </div>
@@ -586,21 +545,6 @@ select.input { cursor: pointer; }
     <div class="process-mobile" id="processMobile"></div>
   </div>
 </section>
-<!-- ===== Work ===== -->
-<section id="work" class="section">
-  <div class="container">
-    <div class="work-top">
-      <div class="section-head">
-        <span class="eyebrow">Selected work</span>
-        <h2 class="text-balance">Results we're proud to put our name on</h2>
-      </div>
-      <a href="#contact" class="work-link">Start your project
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-      </a>
-    </div>
-    <div class="work-grid" id="workGrid"></div>
-  </div>
-</section>
 <!-- ===== Pricing ===== -->
 <section id="pricing" class="section" style="position:relative;">
   <div class="pricing-bg"></div>
@@ -621,17 +565,10 @@ select.input { cursor: pointer; }
 <section class="testimonials section">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Client love</span>
-      <h2 class="text-balance">Don't just take our word for it</h2>
+      <span class="eyebrow">Why us</span>
+      <h2 class="text-balance">A website built around your business</h2>
       <div class="tst-rating">
-        <span class="tst-stars">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </span>
-        <span class="tst-rating-text"><strong>4.9/5</strong> from 120+ reviews</span>
+        
       </div>
     </div>
     <div class="tst-grid" id="tstGrid"></div>
@@ -683,8 +620,29 @@ select.input { cursor: pointer; }
             <div><div class="lbl">Email</div><div class="val">cornerstonestudio.ca@gmail.com</div></div>
           </a>
           <div class="contact-method">
-            <span class="contact-method-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <div><div class="lbl">Studios</div><div class="val">Brooklyn · Lisbon · Remote</div></div>
+            <span class="contact-method-icon">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="1.75"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+             19.79 19.79 0 0 1-8.63-3.07
+             19.5 19.5 0 0 1-6-6
+             19.79 19.79 0 0 1-3.07-8.67
+             A2 2 0 0 1 4.11 2h3
+             a2 2 0 0 1 2 1.72
+             12.84 12.84 0 0 0 .7 2.81
+             2 2 0 0 1-.45 2.11L8.09 9.91
+             a16 16 0 0 0 6 6l1.27-1.27
+             a2 2 0 0 1 2.11-.45
+             12.84 12.84 0 0 0 2.81.7
+             A2 2 0 0 1 22 16.92z"/>
+  </svg>
+</span>
+            <div><div class="lbl">Phone</div><div class="val">+1 289 214 8533</div></div>
           </div>
           <div class="contact-method">
             <span class="contact-method-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
@@ -766,10 +724,10 @@ select.input { cursor: pointer; }
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
             <span class="logo-dot"></span>
           </span>
-          <span class="logo-text">Forge<span>&</span>Form</span>
+          <span class="logo-text">Cornerstone</span>
         </a>
         <p>A digital studio that designs and builds websites that turn visitors into customers — for ambitious brands worldwide.</p>
-        <p class="footer-loc">Remote · Brooklyn · Lisbon</p>
+        <p class="footer-loc">289 214 8533</p>
       </div>
       <div class="footer-col">
         <h4>Studio</h4>
@@ -965,29 +923,6 @@ select.input { cursor: pointer; }
     io.observe(el);
   });
 
-  /* ===== Work ===== */
-  var projects = [
-    { name:"Orée", category:"Fintech", result:"3.2x more leads", img:"https://images.pexels.com/photos/30979444/pexels-photo-30979444.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", grad:"linear-gradient(to top, rgba(76,29,149,0.5), rgba(28,26,40,0.2), rgba(15,14,24,0.7))", span:"span-2x2" },
-    { name:"Sable & Co.", category:"Skincare", result:"+48% AOV", img:"https://images.pexels.com/photos/30979444/pexels-photo-30979444.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", grad:"linear-gradient(to top, rgba(124,41,12,0.5), rgba(28,26,40,0.2), rgba(15,14,24,0.7))", span:"" },
-    { name:"Forma Studio", category:"Architecture", result:"Awwwards SOTD", img:"https://images.pexels.com/photos/34133564/pexels-photo-34133564.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", grad:"linear-gradient(to top, rgba(42,40,56,0.6), rgba(28,26,40,0.2), rgba(15,14,24,0.7))", span:"" },
-    { name:"Quill Coffee", category:"DTC Brand", result:"Sold out in 9 days", img:"https://images.pexels.com/photos/4829083/pexels-photo-4829083.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", grad:"linear-gradient(to top, rgba(91,33,182,0.5), rgba(28,26,40,0.2), rgba(15,14,24,0.7))", span:"span-2" }
-  ];
-  var wg = document.getElementById("workGrid");
-  projects.forEach(function(p,i){
-    var el = document.createElement("a");
-    el.href = "#contact";
-    el.className = "work-item reveal " + (p.span||"");
-    el.style.transitionDelay = (i*90)+"ms";
-    el.innerHTML = '<img src="'+p.img+'" alt="'+p.name+'" loading="lazy" />'
-      + '<div class="work-overlay"><div class="work-overlay-grad" style="background:'+p.grad+'"></div></div>'
-      + '<div class="work-content"><span class="work-cat">'+p.category+'</span>'
-      + '<div class="work-name-row"><span class="work-name">'+p.name+'</span>'
-      + '<span class="work-arrow">'+icon("arrowUpRight")+'</span></div>'
-      + '<p class="work-result">'+p.result+'</p></div>';
-    wg.appendChild(el);
-    io.observe(el);
-  });
-
   /* ===== Pricing ===== */
   var plans = [
     { name:"Launchpad", tagline:"For startups that need to look established — fast.", price:199, upkeep:25, features:["Up to 5 pages","Custom web design","Booking form","Google maps","Mobile responsive design","Contact form","2 rounds of revisions","Launch in 2 weeks","Basic SEO setup"], cta:"Start with Launchpad", featured:false },
@@ -1018,11 +953,11 @@ select.input { cursor: pointer; }
 
   /* ===== Testimonials ===== */
   var testimonials = [
-    { quote:"Forge & Form rebuilt our marketing site in three weeks and our demo bookings tripled. They felt like part of our team, not an outside vendor.", name:"Mara Chen", role:"CEO, Northwind", initials:"MC", color:"#8b5cf6" },
-    { quote:"The most design-obsessed studio we've worked with. Every detail was considered, and the site loads faster than anything we had before.", name:"Idris Bello", role:"Head of Product, Lumen", initials:"IB", color:"#f97316" },
-    { quote:"We went from a clunky template to an award-worthy site. Our investors literally complimented the redesign in our next round.", name:"Sofia Rinaldi", role:"Founder, Forma Studio", initials:"SR", color:"#56536e" },
-    { quote:"They nailed our brand voice on the first pass. The new site paid for itself in the first month from increased conversions alone.", name:"James Whitfield", role:"CMO, Quill Coffee", initials:"JW", color:"#6d28d9" },
-    { quote:"Professional, fast, and genuinely fun to work with. The process was so clear we never once had to ask 'what's happening?'", name:"Aisha Okonkwo", role:"COO, Vertex", initials:"AO", color:"#ea580c" }
+    { quote:"No generic templates. Your website is designed around your business, your brand, and your goals.", name:"Built from scratch", role:"Message from Business Owner", initials:"IT", color:"#ea580c" },
+    { quote:"Modern layouts, thoughtful details, and a visual identity that makes your business look professional.", name:"Designed to stand out", role:"Message from Business Owner", initials:"IT", color:"#f97316" },
+    { quote:"Your website looks great on phones, tablets, laptops, and desktops.", name:"Works everywhere", role:"Message from Business Owner", initials:"IT", color:"#56536e" },
+    { quote:"We make it easy for visitors to understand what you offer and know what to do next.", name:"Simple & Clear", role:"Message from Business Owner", initials:"IT", color:"#6d28d9" },
+    { quote:"Start with what you need now and add new pages, features, and functionality as your business grows.", name:"Made to grow", role:"Message from Business Owner", initials:"IT", color:"#ea580c" }
   ];
   var tg = document.getElementById("tstGrid");
   testimonials.forEach(function(t,i){
