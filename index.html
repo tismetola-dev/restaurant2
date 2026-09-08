@@ -1121,22 +1121,7 @@ select.input { cursor: pointer; }
       return;
     }
 
-    /* 1) Save to Supabase (kept as-is) */
-    try {
-      var payload = {
-        name: name,
-        email: email,
-        company: company || null,
-        budget: budget || null,
-        service: service || null,
-        message: message
-      };
-      var res = await supabase.from("contact_submissions").insert(payload);
-      if(res.error) throw res.error;
-    } catch(err){
-      showError("Something went wrong saving your message. Please try again in a moment.");
-      return;
-    }
+    
 
     /* 2) Send emails via EmailJS — details to you + confirmation to applicant */
     var params = {
